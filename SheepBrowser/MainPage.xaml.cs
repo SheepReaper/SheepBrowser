@@ -16,5 +16,20 @@ namespace SheepReaper.UWP.Browser
             InitializeComponent();
             Browser.Navigate(new Uri("https://www.google.com"));
         }
+
+        private void AppBarButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
+
+        private void CommandBar_Opening(object sender, object e)
+        {
+        }
+
+        private void CommandBar_Opened(object sender, object e)
+        {
+            this.Grid.UpdateLayout();
+
+        }
     }
 }

@@ -6,7 +6,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <WebView x:Name="Browser" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" />
+    <Grid x:Name="Grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <CommandBar x:Name="CommandBar" Grid.Row="0" Opening="CommandBar_Opening" Opened="CommandBar_Opened" ClosedDisplayMode="Minimal">
+            <AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
+            <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Back" Label="Back" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Forward" Label="Forward" Click="AppBarButton_Click"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Like" Label="Like" Click="AppBarButton_Click"/>
+                <AppBarButton Icon="Dislike" Label="Dislike" Click="AppBarButton_Click"/>
+            </CommandBar.SecondaryCommands>
+
+            <CommandBar.Content>
+                <Grid>
+
+                    <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click"/>
+                    <!--<AutoSuggestBox 
+                        x:Name="NavBox" 
+                        MinWidth="300" 
+                        HorizontalAlignment="Stretch" 
+                        PlaceholderText="Type in a search term or URL" 
+                        IsTabStop="True"
+                        QueryIcon="Find"/>-->
+                </Grid>
+            </CommandBar.Content>
+
+        </CommandBar>
+
+        <WebView x:Name="Browser" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Page>
