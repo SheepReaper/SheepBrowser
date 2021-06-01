@@ -1,5 +1,24 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":label(renovate)",
+    ":timezone(America/New_York)",
+    ":rebaseStalePrs",
+    ":automergeDigest",
+    ":automergePatch",
+    ":automergeMinor",
+    ":automergePr",
+    ":maintainLockFilesWeekly",
+    ":automergeLinters",
+    ":automergeTesters",
+    ":automergeTypes",
+    ":gitSignOff",
+    ":npm",
+    ":docker",
+    ":enableVulnerabilityAlertsWithLabel(vulnerability)",
+    ":assignAndReview(SheepReaper)",
+    ":dependencyDashboard",
+    ":followTag(parcel, nightly)",
+    ":semanticCommits"
   ]
 }
