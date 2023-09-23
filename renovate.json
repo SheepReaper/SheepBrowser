@@ -1,24 +1,9 @@
 {
-  "extends": [
-    "config:base",
-    ":label(renovate)",
-    ":timezone(America/New_York)",
-    ":rebaseStalePrs",
-    ":automergeDigest",
-    ":automergePatch",
-    ":automergeMinor",
-    ":automergePr",
-    ":maintainLockFilesWeekly",
-    ":automergeLinters",
-    ":automergeTesters",
-    ":automergeTypes",
-    ":gitSignOff",
-    ":npm",
-    ":docker",
-    ":enableVulnerabilityAlertsWithLabel(vulnerability)",
-    ":assignAndReview(SheepReaper)",
-    ":dependencyDashboard",
-    ":followTag(parcel, nightly)",
-    ":semanticCommits"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ "config:recommended" ],
+  "vulnerabilityAlerts": {
+    "labels": [ "security" ],
+    "automerge": true,
+    "assignees": [ "@SheepReaper" ]
+  }
 }
