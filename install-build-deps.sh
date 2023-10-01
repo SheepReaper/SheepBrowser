@@ -9,7 +9,7 @@ echo "Installing .NET 8"
 bash /tmp/dotnet-install.sh --channel 8.0
 
 echo "Installing maui-android workload"
-sudo dotnet workload install maui-android
+dotnet workload install maui-android
 
 echo "Installing OpenJDK 11"
 sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y msopenjdk-11
