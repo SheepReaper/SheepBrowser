@@ -21,7 +21,5 @@ unzip -o /tmp/commandlinetools.zip -d $sdk_home/cmdline-tools
 ln -sv ./cmdline-tools $sdk_home/cmdline-tools/latest
 
 echo "Installing Android sdkmanager dependencies"
-yes | $sdk_home/cmdline-tools/latest/bin/sdkmanager --licenses
-$sdk_home/cmdline-tools/latest/bin/sdkmanager --install "platform-tools"
-$sdk_home/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
-$sdk_home/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-34"
+yes | $sdk_home/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null
+$sdk_home/cmdline-tools/latest/bin/sdkmanager --install "platform-tools" "build-tools;34.0.0" "platforms;android-34" >/dev/null
